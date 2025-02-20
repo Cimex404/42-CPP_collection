@@ -27,6 +27,7 @@ This task is a little different and shows the functionality of References and Po
 -	**str**:	Is a simple string.
 -	**strPtr**:	Is a pointer to **str**.
 -	**strRef**:	Is a reference to **str**.
+
 Now you need to print the address and value of each of those variables.
 
 ###	Unnecessary violence
@@ -45,6 +46,7 @@ This is the same task as the previous one, but for all levels entered, the corre
 <p>
 	Example:
 </p>
+
 ```bash
 	./harlFilter WARNING
 	[WARNING]
