@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 09:55:06 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/18 09:55:08 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/21 11:19:18 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,20 @@ static std::string	truncate(std::string str)
 	return (str);
 }
 
-std::string	PhoneBook::process_input(void)
+std::string	PhoneBook::process_input(std::string prompt)
 {
 	std::string result;
 
-	if (getline(std::cin, result))
+	std::cout << prompt;
+	while (getline(std::cin, result))
+	{
+		if (result.length() <= 0)
+		{
+			std::cout << "Input cannot be empty.\n" << prompt;
+			continue;
+		}
 		return (result);
+	}
 	std::cout << "\nInput not processed correctly. Exiting" << std::endl;
 	exit (1);
 }
@@ -41,16 +49,11 @@ void	PhoneBook::add_phonebook()
 	curr_contact %= 8;
 	if (max_contacts < 8)
 		max_contacts ++;
-	std::cout << "Enter First name: ";
-	first = process_input();
-	std::cout << "Enter Last name: ";
-	last = process_input();
-	std::cout << "Enter Nickname: ";
-	nick = process_input();
-	std::cout << "Enter Phone number: ";
-	phone = process_input();
-	std::cout << "Enter Darkest secret: ";
-	secret = process_input();
+	first = process_input("Enter First name: ");
+	last = process_input("Enter Last name: ");
+	nick = process_input("Enter Nickname: ");
+	phone = process_input("Enter Phone number: ");
+	secret = process_input("Enter Darkest secret: ");
 	std::cout << std::endl;
 	contact[curr_contact].set_contract(first, last, nick, phone, secret);
 	curr_contact ++;
@@ -78,8 +81,10 @@ void	PhoneBook::search_phonebook()
 					<< "|" << std::setw(10) << truncate(contact[i].get_first())
 					<< "|" << std::setw(10) << truncate(contact[i].get_last())
 					<< "|" << std::setw(10) << truncate(contact[i].get_nick())
-					<< "|\n" << std::endl;
+					<< "|" << std::endl;
 	}
+	std::cout << std::endl;
+	search_contact();
 }
 
 void	PhoneBook::search_contact()
@@ -129,10 +134,7 @@ void	PhoneBook::manage_phonebook()
 		if (input == "ADD")
 			add_phonebook();
 		else if (input == "SEARCH")
-		{
 			search_phonebook();
-			search_contact();
-		}
 		else if (input == "EXIT")
 		{
 			std::cout << "Exiting phonebook..." << std::endl;

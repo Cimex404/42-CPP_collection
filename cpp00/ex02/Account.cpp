@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 16:12:59 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/18 16:13:01 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/21 11:15:55 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	}
 	else
 	{
-		std::cout << ";withdrawl:refused" << std::endl;
+		std::cout << ";withdrawal:refused" << std::endl;
 		return (false);
 	}
 }
