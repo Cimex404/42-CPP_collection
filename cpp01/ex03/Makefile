@@ -6,14 +6,14 @@
 #    By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/20 08:27:32 by jgraf             #+#    #+#              #
-#    Updated: 2025/02/20 11:25:06 by jgraf            ###   ########.fr        #
+#    Updated: 2025/02/24 11:02:57 by jgraf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #	Compilation Rules
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++11
-NAME = violences
+NAME = violence
 SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJ = $(SRC:.cpp=.o)
 

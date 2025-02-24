@@ -6,7 +6,7 @@
 #    By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/20 08:27:32 by jgraf             #+#    #+#              #
-#    Updated: 2025/02/20 11:34:24 by jgraf            ###   ########.fr        #
+#    Updated: 2025/02/24 11:08:39 by jgraf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++11
 NAME = replace
-SRC = main.cpp replace_string.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 #	Compilation

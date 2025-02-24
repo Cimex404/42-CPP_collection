@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:37:46 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/20 11:20:15 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/24 11:01:45 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 //	Constructor
 HumanA::HumanA(std::string name, Weapon &weapon) : name(name), weapon(weapon) {}
-/*{
-	this->name = name;
-	this->weapon = weapon;
-}*/
 
 //	Attack
 void	HumanA::attack(void)

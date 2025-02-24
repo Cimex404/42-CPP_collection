@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:33:23 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/20 11:11:43 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/24 12:54:44 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class	Weapon
 		std::string	type;
 	
 	public:
-		Weapon(std::string type);
-		std::string	getType();
-		void		setType(std::string type);
+		Weapon(const std::string &type);
+		const std::string	&getType()	const;
+		void				setType(const std::string &type);
 };
 
 #endif
