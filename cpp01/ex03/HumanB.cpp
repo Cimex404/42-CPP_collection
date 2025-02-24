@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:37:46 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/20 11:24:46 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/24 15:56:46 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ HumanB::HumanB(std::string name)
 void	HumanB::setWeapon(Weapon &weapon)
 {
 	this->weapon = &weapon;
+	std::cout << name <<  " set " << weapon.getType() <<  " as their weapon." << std::endl;
 }
 
 //	Attack

@@ -6,12 +6,11 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:45:27 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/24 13:03:19 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/24 16:08:18 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-#include <iostream>
 
 //	Private methods
 void	Harl::debug(void)

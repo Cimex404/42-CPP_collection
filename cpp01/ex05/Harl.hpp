@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:53:11 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/20 13:02:44 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/24 16:08:15 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 //	Libraries
 # include <string>
+#include <iostream>
 
 //	Class
 class	Harl
