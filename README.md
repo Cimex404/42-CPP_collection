@@ -68,15 +68,15 @@ The entire CPP02 Module is about fixed numbers. We are creating our own data typ
 -	A destructor.
 
 All tasks build upon each other so that at the end we have a fully functionning class, that can be used as most any other data type.
-We add the comparison operators `==, !=, <, >, <=, >=`, then the arithmetic operators `+, -, *, /`, next the inc/-decrement operators `i++, ++i, i--, --i`, and lastly, two methods for the equivalent of `max` and `min` to fit out data type.
+We add the comparison operators `==, !=, <, >, <=, >=`, then the arithmetic operators `+, -, *, /`, next the inc/-decrement operators `i++, ++i, i--, --i`, and lastly, two methods for the equivalent of `max` and `min` to fit our data type.
 
 
 ###	Barycentric Coordinates Method
-<p>
 The last task of this module is a little different and requires us to utilize the Fixed numbers we just created in a practical task. 
-	We need to create a class called `Point`, this class holds two variables `x` and `y`. If we create three of those, we have a triangle. Our task is to write a program that can determine wheter the point `p` is inside or outside of the triangle.
-</p>
+We need to create a class called `Point`, this class holds two variables `x` and `y`. If we create three of those, we have a triangle. Our task is to write a program that can determine whether the point `p` is inside or outside of the triangle.
+
+![Barycentric Triangle](https://github.com/Cimex404/42-CPP_collection/blob/master/barycentric_triangle.png)
+
 <p>
-	When we draw a triangle between these points: PAB, PAC, PBC we can get their area. If these three areas add up to exactly the size of the ABC triangle, then p is inside the triangle
+When we draw a triangle between these points: Pab, Pac, Pbc we can get their area. If these three areas add up to exactly the size of the abc triangle, then P is inside the triangle.
 </p>
-<img src""></img>
