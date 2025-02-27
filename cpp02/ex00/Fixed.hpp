@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:15:22 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/27 08:41:28 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/27 10:18:23 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class	Fixed
 		Fixed(void);
 		Fixed(const float value);
 		Fixed(const int value);
-		Fixed(Fixed &copy);
+		Fixed(const Fixed &copy);
 		~Fixed(void);
 
 		Fixed	&operator=(const Fixed &other);

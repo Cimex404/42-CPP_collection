@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:21:32 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/27 08:43:18 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/27 11:34:17 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ Fixed	Fixed::operator/(Fixed fixed)
 
 
 //	Override of inc/-decrement operators
-Fixed	Fixed::operator++()			//Pre
+Fixed	Fixed::operator++()			//Post
 {
 	this->fixed_point ++;
 	return (*this);
@@ -142,7 +142,7 @@ Fixed	Fixed::operator--()
 	return (*this);
 }
 
-Fixed	Fixed::operator++(int)		//Post
+Fixed	Fixed::operator++(int)		//Pre
 {
 	Fixed	result;
 

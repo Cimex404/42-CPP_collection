@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 11:32:29 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/27 08:35:30 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/27 11:47:49 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class	Point
 		~Point(void);
 		const float	get_x(void);
 		const float	get_y(void);
+
+		Point	&operator=(const Point &other);
 };
 
 //	Functions

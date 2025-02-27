@@ -6,13 +6,13 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 11:36:08 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/27 08:32:59 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/27 12:14:11 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-static Fixed	point_abs(Point a, Point b, Point c)
+static Fixed	get_area(Point a, Point b, Point c)
 {
 	Fixed	result((a.get_x() * (b.get_y() - c.get_y())
 					+ b.get_x() * (c.get_y() - a.get_y())
@@ -29,12 +29,12 @@ bool	bsp(const Point a, const Point b, const Point c, const Point point)
 	Fixed	pbc;
 	Fixed	pac;
 
-	total = point_abs(a, b, c);
-	pab = point_abs(point, a, b);
-	pbc = point_abs(point, b, c);
-	pac = point_abs(point, c, a);
+	total = get_area(a, b, c);
+	pab = get_area(point, a, b);
+	pbc = get_area(point, b, c);
+	pac = get_area(point, c, a);
 
-	if (total == 0)
+	if (total == 0 || pab == 0 || pbc == 0 || pac == 0)
 		return (false);
 	if (pab + pbc + pac == total)
 		return (true);

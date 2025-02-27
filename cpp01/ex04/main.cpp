@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 11:27:40 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/24 13:00:08 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/27 16:56:25 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 
 static void	replace_string_in_file(std::string input_file, std::string s1, std::string s2)
 {
-	std::ifstream	in_file(input_file);
+	if (s1.empty() || s2.empty())
+		return;
 
 	//	Open files
+	std::ifstream	in_file(input_file);
 	if (!in_file)
 	{
 		std::cerr << "Could not open input file..." << std::endl;

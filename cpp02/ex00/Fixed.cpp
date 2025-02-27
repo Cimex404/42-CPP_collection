@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:21:32 by jgraf             #+#    #+#             */
-/*   Updated: 2025/02/27 09:05:07 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/02/27 10:18:41 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed::Fixed(void)
 }
 
 //	Copy Contructor
-Fixed::Fixed(Fixed &copy)
+Fixed::Fixed(const Fixed &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
