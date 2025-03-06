@@ -4,16 +4,16 @@ These is a collection of the cpp modules of the 42 common core. The cpp modules 
 
 #	CPP Module 00
 ###	Megaphone
-This is a simple program that replicates the **toupper** function in c. It takes an input string and turns all lowercase letters into upercase letters. It also outputs: "* LOUD AND UNBEARABLE FEEDBACK NOISE *", when no input is given.
+This is a simple program that replicates the `toupper` function in c. It takes an input string and turns all lowercase letters into upercase letters. It also outputs: "* LOUD AND UNBEARABLE FEEDBACK NOISE *", when no input is given.
 
 ###	Phonebook
-This one is a little more complex. This is out introduction to classes, this program uses two: **PhoneBook** and **Contacts**. The user can input one of three commands, **ADD**, **SEARCH** and **EXIT**.
--	**EXIT**:	Is exactly as it sounds. It exits the program.
--	**ADD**:	Adds a contact to an array that holds a total of 8 contacts. When a 9th contact is added, the oldest one is overwritten.
--	**SEARCH**:	Lists all contacts in a table, with a maximum width of 10 characters per column. Additionally, the user can enter an index afterwards that displays all information of the contact with the provided index.
+This one is a little more complex. This is out introduction to classes, this program uses two: `PhoneBook` and `Contacts`. The user can input one of three commands, `ADD`, `SEARCH` and `EXIT`.
+-	`EXIT`:	Is exactly as it sounds. It exits the program.
+-	`ADD`:	Adds a contact to an array that holds a total of 8 contacts. When a 9th contact is added, the oldest one is overwritten.
+-	`SEARCH`:	Lists all contacts in a table, with a maximum width of 10 characters per column. Additionally, the user can enter an index afterwards that displays all information of the contact with the provided index.
 
 ###	Account Log
-This is more like a puzzle to figure out, that anything else. You are provided with the **Account.hpp**, the **tests.cpp** and the **.log** file. Your task is to create a **Account.cpp** file that can reproduce the behaviour of the **.log** file
+This is more like a puzzle to figure out, that anything else. You are provided with the `Account.hpp`, the `tests.cpp` and the `.log` file. Your task is to create a `Account.cpp` file that can reproduce the behaviour of the `.log` file
 
 #	CPP Module 01
 ###	BraiiiiiiinnnzzzZ
@@ -23,22 +23,22 @@ This is an introduction to the differences between a heap allocated and stack cl
 This builds on the previous task. You need to allocate N number of zombies that announce themselves and get destroyed after.
 
 ###	PtrRef
-This task is a little different and shows the functionality of References and Pointers. You need three variables **str**, **strPTR**, **strREF**.
--	**str**:	Is a simple string.
--	**strPtr**:	Is a pointer to **str**.
--	**strRef**:	Is a reference to **str**.
+This task is a little different and shows the functionality of References and Pointers. You need three variables `str`, `strPTR`, `strREF`.
+-	`str`:	Is a simple string.
+-	`strPtr`:	Is a pointer to `str`.
+-	`strRef`:	Is a reference to `str`.
 
 Now you need to print the address and value of each of those variables.
 
 ###	Unnecessary violence
-Here we have three classes: **Weapon**, **HumanA**, **HumanB**. **HumanA** gets a weapon in it's constructor, while **HumanB** does not get a weapon as long as there is not one asigned to it. The humans can then call the attack function to print their type of weapon.
+Here we have three classes: `Weapon`, `HumanA`, `HumanB`. `HumanA` gets a weapon in it's constructor, while `HumanB` does not get a weapon as long as there is not one asigned to it. The humans can then call the attack function to print their type of weapon.
 
 ###	Replacement
-This one has a very simple concept. We give the program a file to read from and two strings. Another file is then created, and the entirety of the original file is written into the new file. However all instances of string1 are replaced by string2. The new file is called the same as the original, but with a **.replace** sufix.
+This one has a very simple concept. We give the program a file to read from and two strings. Another file is then created, and the entirety of the original file is written into the new file. However all instances of string1 are replaced by string2. The new file is called the same as the original, but with a `.replace` sufix.
 
 ###	Harl
 This is an exercise focused on functions as parameters. This task needs to be accomplished without an if-else tree (Even though that might be less confusing).
-Harl likes to complain, he has 4 Levels of complain-ness. Each of those levels is correspondant to a private function in the Harl class and this function will be called if one of those four keywords is given to Harls complain function: **DEBUG**, **INFO**, **WARNING**, **ERROR**.
+Harl likes to complain, he has 4 Levels of complain-ness. Each of those levels is correspondant to a private function in the Harl class and this function will be called if one of those four keywords is given to Harls complain function: `DEBUG`, `INFO`, `WARNING`, `ERROR`.
 
 ###	Harl Filter
 This is the same task as the previous one, but for all levels entered, the corresponding level, as well as all levels above it are printed.
@@ -80,3 +80,16 @@ We need to create a class called `Point`, this class holds two variables `x` and
 <p>
 When we draw a triangle between these points: Pab, Pac, Pbc we can get their area. If these three areas add up to exactly the size of the abc triangle, then P is inside the triangle.
 </p>
+
+#	CPP Module 03
+###	ClapTrap
+This is a simple task of creating a class called `ClapTrap`, this class has following attributes: `name`, `hit_points`, `attack_points`, `energy_points`. It also has these public methods: `attack`, `takeDamage`, `beRepaired`. ClapTrap can't attack and heal, when hit_points or energy_points are at 0. The default constructor must take a name and sets the default values for `hit_points`, `attack_points` and `energy_points`.
+
+###	ScavTrap
+This is the introduction to inheritance. The class `ScavTrap` is a child of the `ClapTrap` class, therefore the `ScavTrap` does only need a separate name and attack functions, as we want to be able to see, wheter a `ClapTrap` or a `ScavTrap` is attacking. This will also be true for all following classes. The `ScavTrap` will also have a new method called `guardGate`, calling this function will toggle the guardkeeping mode.
+
+###	FragTrap
+This is essentially the same the `ScavTrap`, but with a different special method: `giveHighfive`. This method will simply print a positive high-five message to the stdout.
+
+###	Diamond Trap (Now this is tricky)
+This is a double inheritance. Basically, the `DiamondTrap` is a child of both `ScavTrap` and `FragTrap`. It inherits the values of `hit_points` and `attack_points` from `FragTrap` and `energy_points` and the `attack` method from ScavTrap. In addition, the `DiamondTrap` must have a separate name from its `ClapTrap` grandfather, namely, the grandfather must have a `_clap_name` suffix as it's name. Lastly, the `DiamondTrap` must be able to use all methods, such as `attack`, `highFive` and `guardGate`. But also it's own special method called `whoAmI`, which prints its own name, but also the grandfather `ClapTrap` name. (That was a lot of `Traps`...)
