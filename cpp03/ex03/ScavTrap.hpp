@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 11:46:30 by jgraf             #+#    #+#             */
-/*   Updated: 2025/03/05 16:38:32 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/03/06 14:57:54 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class	ScavTrap : virtual public ClapTrap
 {
 	private:
-		bool		gate_mode;
 		std::string	name;
+		bool		gate_mode;
 
 	public:
 		ScavTrap(std::string name);
@@ -31,6 +31,7 @@ class	ScavTrap : virtual public ClapTrap
 
 		void	guardGate();
 		void	attack(const std::string &target);
+		int		get_EP();
 		void	status();
 };
 

@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 11:45:58 by jgraf             #+#    #+#             */
-/*   Updated: 2025/03/06 10:55:51 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/03/06 14:58:52 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,12 @@ void	ScavTrap::guardGate()
 		else
 			std::cout << name << " is not longer guarding the gate!" << std::endl;
 	}
+}
+
+//	Random Getter
+int	ScavTrap::get_EP()
+{
+	return (energie_points);
 }
 
 //	Status
