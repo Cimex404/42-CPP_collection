@@ -93,3 +93,16 @@ This is essentially the same the `ScavTrap`, but with a different special method
 
 ###	Diamond Trap (Now this is tricky)
 This is a double inheritance. Basically, the `DiamondTrap` is a child of both `ScavTrap` and `FragTrap`. It inherits the values of `hit_points` and `attack_points` from `FragTrap` and `energy_points` and the `attack` method from ScavTrap. In addition, the `DiamondTrap` must have a separate name from its `ClapTrap` grandfather, namely, the grandfather must have a `_clap_name` suffix as it's name. Lastly, the `DiamondTrap` must be able to use all methods, such as `attack`, `highFive` and `guardGate`. But also it's own special method called `whoAmI`, which prints its own name, but also the grandfather `ClapTrap` name. (That was a lot of `Traps`...)
+
+#	CPP Module 04
+###	Animals and Wrong Animals
+This is an implementation of the most common example for polymorphism in c++. We have an animal class that has a public method called `makeSound()`, this will print a generic animal sound. In addition to that, there are `Cat` and `Dog` classes that inherit from `Animal` and override the `makeSound()` method to print the corresponding animals sound.
+Lastly there are `WrongAnimal` and `WrongCat`. To confirm that we understood what we are doing, `WrongCat` should print the `WrongAnimal` sound, when instantiated as a WrongAnimal. Essentially to prove, that we can also do it wrong.
+
+###	Animals have brains
+Now we need to add a `Brain` class to the project and give each `Dog` and `Cat` a private Brain instance. We can assign a total of 100 ideas to each brain and have the owner of said brain display the contents at any time. We also need to make sure that the `Copy constructor` and `Copy assignment operator` create deep copies of the animals brain. This means that a copied Brain will contain the same ideas as the original, but be entirely indepented off the original.
+
+###	Brainless task
+Turn `Animal` into an abstact class:
+
+That's it...
