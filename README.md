@@ -103,6 +103,17 @@ Lastly there are `WrongAnimal` and `WrongCat`. To confirm that we understood wha
 Now we need to add a `Brain` class to the project and give each `Dog` and `Cat` a private Brain instance. We can assign a total of 100 ideas to each brain and have the owner of said brain display the contents at any time. We also need to make sure that the `Copy constructor` and `Copy assignment operator` create deep copies of the animals brain. This means that a copied Brain will contain the same ideas as the original, but be entirely indepented off the original.
 
 ###	Brainless task
-Turn `Animal` into an abstact class:
+<p>
+	Turn `Animal` into an abstract class:
+</p>
 
-That's it...
+<table>
+	<tr>
+		<td style="border: none;"><img src="https://github.com/Cimex404/42-CPP_collection/blob/master/AnimalNonAbstact.png" alt="NonAbstract" width="400"></td>
+    		<td style="border: none;"><img src="https://github.com/Cimex404/42-CPP_collection/blob/master/AnimalAbstact.png" alt="Abstract" width="400"></td>
+	</tr>
+</table>
+
+<p>
+	That's it...
+</p>
