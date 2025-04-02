@@ -117,3 +117,20 @@ Now we need to add a `Brain` class to the project and give each `Dog` and `Cat` 
 <p>
 	That's it...
 </p>
+
+
+#	CPP Module 05
+###	Bureaucrats
+This is an exercise on `Exceptions`. `Exceptions` are cases in which the program fails a specific task, but can be caught using a try-catch block. The Bureaucrats are assigned a grade between 1 (highest) and 150 (lowest). When a `Bureaucrat` is instantiated using a grade that is out of this range a `GradeTooLow` or `GradeTooLow` exception is thrown. This can be caught with a catch block. Same goes for the increase and decrease methods.
+
+###	Form
+This introduces `Forms`, forms are created with a sign- and execute-grade and only Bureaucrats with the same or higher grade than that of the form can sign a form. A form can also not be signed twice.
+
+###	Forms that actually do something
+Here we create children of the Form class:
+-	`ShrubberyCreation`: Creates a file that draws an ascii-art tree.
+-	`RobotomyRequest`: Performs a robotomization of a target that is successfull 50% of the time.
+-	`PresidentialPardon`: A target recieves a pardon from the president
+
+###	Interns
+Now we have `Interns`. Interns are pretty useless, but they have one ability: They can create forms for Bureaucrat to sign. If the form that needs to be signed does not exist, the intern will fail to create one.
