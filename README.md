@@ -134,3 +134,21 @@ Here we create children of the Form class:
 
 ###	Interns
 Now we have `Interns`. Interns are pretty useless, but they have one ability: They can create forms for Bureaucrat to sign. If the form that needs to be signed does not exist, the intern will fail to create one.
+
+
+#	CPP Module 06
+###	Scalar Converter
+This is an exercise about `static_cast`. The program takes an input of a string and figures out which of these data type the input is supposed to be: `char`, `int`, `float`, `double`.
+Next, the input is converted into it's real data type and lastly converted into the remaining three data types.<br><br>
+Example: "42" --> Type: Int<br>
+Char:	'*'<br>
+Int:	42<br>
+Float:	42.0f<br>
+Double:	42.0
+
+
+###	Serializer
+This time we need to convert a custom `Data` struct to a `uintptr_t` using `interpret_cast`.
+
+###	Identifyier
+This is about identifying specific data types. We have a `Base` class and three classes that inherit from it: `A`, `B`, `C`. These subclasses are created randomly on runtime and the program will need to identify which of these three it is. We do this by trying if conversions were successfull or not.
