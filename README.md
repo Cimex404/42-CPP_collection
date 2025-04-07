@@ -140,11 +140,16 @@ Now we have `Interns`. Interns are pretty useless, but they have one ability: Th
 ###	Scalar Converter
 This is an exercise about `static_cast`. The program takes an input of a string and figures out which of these data type the input is supposed to be: `char`, `int`, `float`, `double`.
 Next, the input is converted into it's real data type and lastly converted into the remaining three data types.<br><br>
-Example: "42" --> Type: Int<br>
-Char:	'*'<br>
-Int:	42<br>
-Float:	42.0f<br>
+
+```
+./converter 42
+Type:	INT
+
+Char:	'*'
+Int:	42
+Float:	42.0f
 Double:	42.0
+```
 
 
 ###	Serializer
