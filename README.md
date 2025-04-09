@@ -157,3 +157,20 @@ This time we need to convert a custom `Data` struct to a `uintptr_t` using `inte
 
 ###	Identifyier
 This is about identifying specific data types. We have a `Base` class and three classes that inherit from it: `A`, `B`, `C`. These subclasses are created randomly on runtime and the program will need to identify which of these three it is. We do this by trying if conversions were successfull or not.
+
+
+#	CPP Module 07
+###	Just a few functions
+This is a simple introduction to `templates`. You need to write templates for the following functions:<br>
+-	min
+-	max
+-	swap
+These templates need to be able to take and use any type you give it, even complex types like classes and structs.
+
+
+###	Iter
+This is a `template` that takes an `array of any type` and a `function of any type` and iterates through each element in the array while performing the function with the element as a parameter.
+
+
+###	Array
+Simply recreate the behaviour of an array through a `template array class` that can hold any data type (even complex ones).
