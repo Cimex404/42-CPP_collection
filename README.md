@@ -165,7 +165,9 @@ This is a simple introduction to `templates`. You need to write templates for th
 -	min
 -	max
 -	swap
+<p>
 These templates need to be able to take and use any type you give it, even complex types like classes and structs.
+</p>
 
 
 ###	Iter
