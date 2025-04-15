@@ -176,3 +176,15 @@ This is a `template` that takes an `array of any type` and a `function of any ty
 
 ###	Array
 Simply recreate the behaviour of an array through a `template array class` that can hold any data type (even complex ones).
+
+
+#	CPP Module 08
+###	Easyfind
+This is a simple introduction to `containers`. In this execise we need to write a template function that can take any non-associative container type (stack, vector, list, array, etc.) and find a specified integer.
+
+
+###	Span
+Here we are creating our own class that can hold a list of `N` integers. As we are using the `vector container`, we need to manually check if the number of elements exceeds N. The `addNumber` method can both add single integer values, but also a range of iterators to the original vector list.
+
+###	Mutant Stack
+What an injustice! The stack can't be iterated... We need to fix this. Essentially we need to create a class that inherits from `std::stack` and can be iterated, while keeping all of the attributes and methods from `std::stack`. This can be done with: `iterator`, `const_iterator`, `reverse_iterator` and `const_reverse_iterator`
