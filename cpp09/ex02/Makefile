@@ -6,7 +6,7 @@
 #    By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/01 08:38:03 by jgraf             #+#    #+#              #
-#    Updated: 2025/04/24 12:34:00 by jgraf            ###   ########.fr        #
+#    Updated: 2025/04/24 15:53:01 by jgraf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++17
 NAME = PmergeMe
-SRC = main.cpp RPN.cpp
+SRC = main.cpp PmergeMe.cpp
 OBJ = $(SRC:.cpp=.o)
 
 #	Compilation
