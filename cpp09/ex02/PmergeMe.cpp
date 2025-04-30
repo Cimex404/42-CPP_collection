@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:12:06 by jgraf             #+#    #+#             */
-/*   Updated: 2025/04/24 17:32:38 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/04/28 11:30:15 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,14 @@ PmergeMe::~PmergeMe()
 
 }
 
-// Generate Jacobsthal sequence
-std::vector<size_t>	PmergeMe::generate_jacobsthal(size_t n)
-{
-	std::vector<size_t>	jacobsthal;
-	if (n == 0)
-		return (jacobsthal);
-	jacobsthal.push_back(0);
-	if (n == 1)
-		return (jacobsthal);
-	jacobsthal.push_back(1);
-	for (size_t i = 2; i < n; ++i)
-	{
-		size_t	value = jacobsthal[i - 1] + 2 * jacobsthal[i - 2];
-		jacobsthal.push_back(value);
-	}
-	return (jacobsthal);
-}
-
 
 //	Exceptions
 const char	*PmergeMe::NegativeException::what() const throw()
 {
 	return ("Negative numbers are forbidden!");
+}
+
+const char	*PmergeMe::InvalidInputException::what() const throw()
+{
+	return ("Input contains invalid characters!");
 }

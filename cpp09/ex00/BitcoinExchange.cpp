@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:26:52 by jgraf             #+#    #+#             */
-/*   Updated: 2025/04/18 10:13:04 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/04/30 08:30:58 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,54 +38,6 @@ BitcoinExchange::~BitcoinExchange()
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //	Fill Database
 void	BitcoinExchange::fill_database()
 {
@@ -108,9 +60,11 @@ void	BitcoinExchange::fill_database()
 		if (line != "date,exchange_rate")
 		{
 			date = line.substr(0, line.find(","));
-			this->data[date] = atof(line.substr(line.find(",") + 1, line.length()).c_str());
+			this->data[date] = std::atof(line.substr(line.find(",") + 1, line.length()).c_str());
 		}
 	}
+
+	//	Close file to avoid leaks
 	file.close();
 }
 
@@ -118,9 +72,9 @@ void	BitcoinExchange::fill_database()
 //	Get closest date
 std::string BitcoinExchange::get_closest_date(std::string date)
 {
-	int year = atoi(date.substr(0, date.find("-")).c_str());
-	int month = atoi(date.substr(date.find("-") + 1, date.find_last_of("-") - date.find("-") - 1).c_str());
-	int day = atoi(date.substr(date.find_last_of("-") + 1).c_str());
+	int	year = std::atoi(date.substr(0, date.find("-")).c_str());
+	int	month = std::atoi(date.substr(date.find("-") + 1, date.find_last_of("-") - date.find("-") - 1).c_str());
+	int	day = std::atoi(date.substr(date.find_last_of("-") + 1).c_str());
 
 	while (year >= 2009)
 	{
@@ -133,7 +87,7 @@ std::string BitcoinExchange::get_closest_date(std::string date)
 				oss << std::setw(2) << std::setfill('0') << month << "-";
 				oss << std::setw(2) << std::setfill('0') << day;
 				if (data.find(oss.str()) != data.end())
-					return oss.str();
+					return (oss.str());
 				day --;
 			}
 			month --;
@@ -142,7 +96,7 @@ std::string BitcoinExchange::get_closest_date(std::string date)
 		year --;
 		month = 12;
 	}
-	throw NotFoundException();
+	throw	NotFoundException();
 }
 
 
@@ -154,9 +108,9 @@ bool	BitcoinExchange::check_date_valid(std::string date)
 	int		day;
 	int		days[] = {31, 28, 31, 30, 31, 30, 30, 31, 30, 31, 30, 31};
 
-	year = atoi(date.substr(0, date.find("-")).c_str());
-	month = atoi(date.substr(date.find("-") + 1, date.find_last_of("-") - date.find("-") - 1).c_str());
-	day = atoi(date.substr(date.find_last_of("-") + 1).c_str());
+	year = std::atoi(date.substr(0, date.find("-")).c_str());
+	month = std::atoi(date.substr(date.find("-") + 1, date.find_last_of("-") - date.find("-") - 1).c_str());
+	day = std::atoi(date.substr(date.find_last_of("-") + 1).c_str());
 	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
 		days[1] = 29;
 	if (day <= days[month-1] && month <= 12)
@@ -235,38 +189,10 @@ void	BitcoinExchange::process(char *in_file)
 			std::cerr << "Error: " << e.what() << std::endl;
 		}
 	}
+
+	//	Close to avoid leaks
+	file.close();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //	Exceptions

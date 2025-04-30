@@ -187,4 +187,18 @@ This is a simple introduction to `containers`. In this execise we need to write 
 Here we are creating our own class that can hold a list of `N` integers. As we are using the `vector container`, we need to manually check if the number of elements exceeds N. The `addNumber` method can both add single integer values, but also a range of iterators to the original vector list.
 
 ###	Mutant Stack
-What an injustice! The stack can't be iterated... We need to fix this. Essentially we need to create a class that inherits from `std::stack` and can be iterated, while keeping all of the attributes and methods from `std::stack`. This can be done with: `iterator`, `const_iterator`, `reverse_iterator` and `const_reverse_iterator`
+What an injustice! The stack can't be iterated... We need to fix this. Essentially we need to create a class that inherits from `std::stack` and can be iterated, while keeping all of the attributes and methods from `std::stack`. This can be done with: `iterator`, `const_iterator`, `reverse_iterator` and `const_reverse_iterator`.
+
+
+#	CPP Module 09
+This is finally a truly practical module. You don't learn anything new here, you just need to apply your knowledge. For every task a specific container must be picked, any container can only be used once.
+
+###	BitcoinExchange
+Here you are given a database (`data.csv`), this database contains a data and an associated value. Any file is given as input, my program comes with a properly formated input file (`input.txt`). For every date in the input file, the appropriate value in the databae must be returned, should a data not exist in the datebase, the next lower date is used `e.g.: 2024-02-31 => 2024-02-29`.
+For this task, the `std::map` container is used as the date can be used to get the associated value, just like from an array.
+
+###	Reverse Polish Notation
+This is the most fun I've had with any CPP Module. The reverse polish notation looks as follows: `2 1 +`. This will evluate to 3, it is the same as `2 + 1`. The container is used is `std::stack`, as the operation performed when any of these symbols `+`, `-`, `*`, `/` are encountered, is performed on the lestest/top two elements in the stack. That means this is also a valid operation: `3 5 4 1 9 7 5 - / - + - +`. Remember that devision by 0 is still not possible and will throw an exception.
+
+###	PmergeMe
+This is the least fun I've had with any CPP Module. Here we need to implement the `Ford-Johnson Algiorithm`, also known as `Merge-Insertion-Sort`. We need to set up a template function that can handle different container types. In this case I chose `std::vector` and `std::deque`, because all of their relevant member functions are the exact same. The task also made us meassure the time it took each container to finish the sorting. In a majority of cases, `vector` is faster, as it is a contiguous block of memory, while `deque` will split into multiple blocks of memory when it gets too big.
