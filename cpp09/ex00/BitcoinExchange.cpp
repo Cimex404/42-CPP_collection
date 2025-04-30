@@ -6,7 +6,7 @@
 /*   By: jgraf <jgraf@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:26:52 by jgraf             #+#    #+#             */
-/*   Updated: 2025/04/30 08:30:58 by jgraf            ###   ########.fr       */
+/*   Updated: 2025/04/30 09:07:05 by jgraf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,31 +72,11 @@ void	BitcoinExchange::fill_database()
 //	Get closest date
 std::string BitcoinExchange::get_closest_date(std::string date)
 {
-	int	year = std::atoi(date.substr(0, date.find("-")).c_str());
-	int	month = std::atoi(date.substr(date.find("-") + 1, date.find_last_of("-") - date.find("-") - 1).c_str());
-	int	day = std::atoi(date.substr(date.find_last_of("-") + 1).c_str());
-
-	while (year >= 2009)
-	{
-		while (month > 0)
-		{
-			while (day > 0)
-			{
-				std::ostringstream oss;
-				oss << year << "-";
-				oss << std::setw(2) << std::setfill('0') << month << "-";
-				oss << std::setw(2) << std::setfill('0') << day;
-				if (data.find(oss.str()) != data.end())
-					return (oss.str());
-				day --;
-			}
-			month --;
-			day = 31;
-		}
-		year --;
-		month = 12;
-	}
-	throw	NotFoundException();
+	auto	it = data.lower_bound(date);
+	if (it == data.begin())
+		throw NotFoundException();
+	it -- ;
+	return (it->first);
 }
 
 
